@@ -9,8 +9,9 @@ public class App extends PApplet {
 	public void setup(){
 		frameRate(120);
 		Ray r = new Ray(new Vector(0,0,0), new Vector(1,1,1));
-		Sphere s = new Sphere(1.4,1.5,1.9,0.1);
+		Sphere s = new Sphere(1.4,1.5,2.1,0.1);
 		println(r.intersect(s));
+		exit();
 	}
 	public void draw(){
 		background(64);

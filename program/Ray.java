@@ -13,6 +13,10 @@ public class Ray{
         step_vec = this.dir.norm().scale(step);
     }
 
+    public Ray(Vector start, Vector end, int catch){
+        this(start, end.add(start.scale(-1)));
+    }
+
     public Bool_Point intersect(Surface s){
         double lastErr = 1/0.;
         Vector curP = new Vector(this.origen);

@@ -30,4 +30,6 @@ public class Camera{
             new Vector(0,0,0),  
             s);
     }
+
+    
 }

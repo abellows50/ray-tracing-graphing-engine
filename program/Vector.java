@@ -14,6 +14,10 @@ public class Vector{
         this.z = v.z;
     }
 
+    public Vector(Vector start, Vector end){
+        this(end.add(start.scale(-1)));
+    }
+
     public double mag(){
         return Math.sqrt(this.x*this.x+
                         this.y*this.y+
@@ -30,6 +34,11 @@ public class Vector{
             this.y + v.y,
             this.z + v.z
         );
+    }
+
+    public static double dist(Vector v1, Vector v2){
+        Vector between = new Vector(v1, v2);
+        return between.mag();
     }
 
     public double dot(Vector v){

@@ -1,4 +1,5 @@
 import java.lang.Math;
+import java.util.ArrayList;
 public class Ray{
     private Vector origen;
     private Vector dir;
@@ -15,11 +16,27 @@ public class Ray{
     }
 
     public Ray(Vector start, Vector end, int c){
-        this(start, end.add(start.scale(-1)));
+        // this(start, end.add(start.scale(-1)));
+        this(start, new Vector(start,end));
     }
 
     public double mag(){
         return this.dir.mag();
+    }
+
+    public Vector intersect(Scene s){
+        ArrayList<Bool_Point> intersects = new ArrayList<Bool_Point>();
+        for (Surface surf: s.getSurfaces()){
+            intersects.add(this.intersect(surf));
+        }
+
+        int index = 0;
+        double dist = -1/0.;
+
+        for(Bool_Point bp: intersects){
+
+        }
+        return null;
     }
 
     public Bool_Point intersect(Surface s){

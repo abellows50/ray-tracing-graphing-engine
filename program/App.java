@@ -29,6 +29,11 @@ public class App extends PApplet {
 		s.addLight(new Light(new Vector(5,5,5), new Color(255,255,255),5));
 		s.addLight(new Light(new Vector(-5,-5,-5), new Color(255,255,255),5));
 		println("line 30 says: " + s.get_light_at_point(new Vector(-1,-1,3)));
-
+		// test fxn for scene intersect
+		s = new Scene();
+		s.addSurface(new Sphere(1,2,2,2));
+		s.addSurface(new Sphere(1,4,4,4));
+		Ray r = new Ray(new Vector(0,0,0), new Vector(1,1,1));
+		println("line 37 says: " + r.intersect(s));
 	}
 }

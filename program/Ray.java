@@ -30,13 +30,23 @@ public class Ray{
             intersects.add(this.intersect(surf));
         }
 
-        int index = 0;
-        double dist = -1/0.;
+        int minIndex = -1;
+        double minDist = 1/0.;
 
-        for(Bool_Point bp: intersects){
-
+        for(int i = 0; i<intersects.size(); i++){
+            Bool_Point bp = intersects.get(i);
+            if(bp.intersected()){
+                double dist = Vector.dist(bp.getP(),origen);
+                if(dist<minDist){
+                    minDist=dist;
+                    minIndex=i;
+                }
+            }
         }
-        return null;
+        if(minIndex<0){
+            return null;
+        }
+        return intersects.get(minIndex).getP();
     }
 
     public Bool_Point intersect(Surface s){

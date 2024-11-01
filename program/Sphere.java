@@ -1,5 +1,5 @@
 import java.lang.Math;
-public class Sphere implements surface{
+public class Sphere implements Surface{
     double r;
     Vector center;
 

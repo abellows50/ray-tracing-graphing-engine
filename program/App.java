@@ -8,9 +8,7 @@ public class App extends PApplet {
 
 	public void setup(){
 		frameRate(120);
-		Ray r = new Ray(new Vector(0,0,0), new Vector(1,1,1));
-		Sphere s = new Sphere(1.4,1.5,2.1,0.1);
-		println(r.intersect(s));
+		test();
 		exit();
 	}
 	public void draw(){
@@ -22,4 +20,15 @@ public class App extends PApplet {
 		String[] appletArgs = new String[] { "App" };
 		PApplet.main(appletArgs);
     }
+
+
+	public void test(){
+		//test function for scene, light, ray ...
+		Scene s = new Scene();
+		s.addSurface(new Sphere(1,2,3,4));
+		s.addLight(new Light(new Vector(5,5,5), new Color(255,255,255),5));
+		s.addLight(new Light(new Vector(-5,-5,-5), new Color(255,255,255),5));
+		println("line 30 says: " + s.get_light_at_point(new Vector(-1,-1,3)));
+
+	}
 }

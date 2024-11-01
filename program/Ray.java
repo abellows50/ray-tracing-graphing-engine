@@ -14,8 +14,12 @@ public class Ray{
         step_vec = this.dir.norm().scale(step);
     }
 
-    public Ray(Vector start, Vector end, int catch){
+    public Ray(Vector start, Vector end, int c){
         this(start, end.add(start.scale(-1)));
+    }
+
+    public double mag(){
+        return this.dir.mag();
     }
 
     public Bool_Point intersect(Surface s){

@@ -9,7 +9,7 @@ public class Camera{
     public Camera(int width, int height, 
                     Vector pixel_x_offset,
                     Vector pixel_y_offset,
-                    Vector camera_to_center_pixel
+                    Vector camera_to_center_pixel,
                     Vector eye, Scene s){
         this.pixels = new Color[width][height];
         this.pixel_x_offset = pixel_x_offset;

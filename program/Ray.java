@@ -13,7 +13,7 @@ public class Ray{
         step_vec = this.dir.norm().scale(step);
     }
 
-    public boolean intersect(Sphere s){
+    public Bool_Point intersect(Surface s){
         double lastErr = 1/0.;
         Vector curP = new Vector(this.origen);
         double curErr = s.err_from_point(curP);
@@ -30,6 +30,7 @@ public class Ray{
             c++;
         }
         System.out.println("c: "+c);
-        return -THRESHOLD < lastErr && lastErr < THRESHOLD;
+        return new Bool_Point(-THRESHOLD < lastErr && lastErr < THRESHOLD,
+                                curP.add(step_vec.scale(-1)));
     }
 }

@@ -6,7 +6,8 @@ public class Ray{
     private double step = 0.01;
     private double THRESHOLD = 0.01;
     private int MAX_ITERATIONS = 100000000;
-
+    private Color c;
+    
     public Ray(Vector o, Vector d){
         this.origen = o;
         this.dir = d;

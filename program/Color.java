@@ -1,4 +1,6 @@
-public class Color{
+import processing.core.PApplet;
+
+public class Color extends PApplet{
     private double r,g,b;
 
     public Color(double r, double g, double b){
@@ -27,4 +29,5 @@ public class Color{
     public double getR(){return this.r;}
     public double getG(){return this.g;}
     public double getB(){return this.b;}
+    public int getColor(){return color((float)this.r,(float)this.g,(float)this.b);}
 }

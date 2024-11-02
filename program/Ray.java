@@ -65,7 +65,6 @@ public class Ray{
             // System.out.println("curErr: " + curErr + " pnt: " + curP);
             c++;
         }
-        System.out.println("c: "+c);
         return new Bool_Point(-THRESHOLD < lastErr && lastErr < THRESHOLD,
                                 curP.add(step_vec.scale(-1)));
     }

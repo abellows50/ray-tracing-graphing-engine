@@ -21,6 +21,7 @@ public class App extends PApplet {
 		PApplet.main(appletArgs);
     }
 
+	
 
 	public void test(){
 		//test function for scene, light, ray ...
@@ -35,5 +36,11 @@ public class App extends PApplet {
 		s.addSurface(new Sphere(1,4,4,4));
 		Ray r = new Ray(new Vector(0,0,0), new Vector(1,1,1));
 		println("line 37 says: " + r.intersect(s));
+
+		//test for camera
+		Camera c = new Camera(10,10, new Vector(1,0,0), new Vector(0,1,0), new Vector(0,0,1), new Vector(0,0,0), s);
+		c.develop();
+		int[][] output = c.render();
+		
 	}
 }

@@ -1,5 +1,14 @@
 import java.lang.Math;
 public class Vector{
+    // This is a vector class
+    // it is used to represent a point in 3d space
+    // it is used to represent a direction in 3d space
+    // it has methods to scale, add, and subtract vectors
+    // magnitude of a vector
+    // dot product of two vectors
+
+
+
     double x,y,z;
 
     public Vector(double x, double y, double z){

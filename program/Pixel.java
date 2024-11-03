@@ -1,4 +1,10 @@
 public class Pixel{
+    // a pixel is a point in space with a color
+    // it is the basis for the camera's photo cell
+    // the pixel can convert its color into a processing color
+
+
+
     private Color c;
     private Vector p;
 
@@ -7,6 +13,7 @@ public class Pixel{
         this.p = p;
     }
 
+    
     public Pixel(int x, int y, int width, int height,
                 Vector pixel_x_offset, 
                 Vector pixel_y_offset, 

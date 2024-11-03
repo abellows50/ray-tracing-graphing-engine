@@ -1,6 +1,12 @@
 import java.lang.Math;
 import java.util.ArrayList;
 public class Ray{
+    // This is a ray class
+    // it is used to represent a ray in 3d space that travels
+    // it has utility in calculating the intersection of a ray with a surface
+    // extends to scene intersection
+
+
     private Vector origen;
     private Vector dir;
     private Vector step_vec;

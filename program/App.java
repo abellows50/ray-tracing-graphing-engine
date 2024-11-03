@@ -57,7 +57,7 @@ public class App extends PApplet {
 		// println("line 37 says: " + r.intersect(s));
 
 		//test for camera
-		Camera c = new Camera(1400,800, //width, height
+		Camera c = new Camera(800,800, //width, height
 							  new Vector(0.05,0,0),  //pixel_x_offset
 							  new Vector(0,0.05,0),  //pixel_y_offset
 							  new Vector(0,0,40),  //camera_to_center_pixel

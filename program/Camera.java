@@ -45,6 +45,7 @@ public class Camera extends PApplet{
             s);
     }
     
+    // develop the camera given the scene
     public void develop(){
         int cnt = 0;
         for(Pixel[] prow: this.pixels){
@@ -60,7 +61,7 @@ public class Camera extends PApplet{
                     // println(c);
                     // c = c.scale(100000.);
                     p.setColor(c);
-                    
+
                     // END SHOULD BE
 
                     // DEBUG

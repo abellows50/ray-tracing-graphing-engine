@@ -1,4 +1,7 @@
 public class Light{
+    // this represents a light source in the scene
+
+
     private Vector position;
     private Color color;
     private double intensity;

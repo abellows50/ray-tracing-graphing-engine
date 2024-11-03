@@ -65,16 +65,16 @@ public class Camera extends PApplet{
                 }
                 if(intersect != null){
                     // SHOULD BE
-                    // Color c = this.s.get_light_at_point(intersect);
-                    // // println(c);
-                    // // c = c.scale(100000.);
-                    // p.setColor(c);
+                    Color c = this.s.get_light_at_point(intersect);
+                    // println(c);
+                    // c = c.scale(100000.);
+                    p.setColor(c);
 
                     // END SHOULD BE
 
                     // DEBUG
-                    Color c = new Color(255,0,0);
-                    p.setColor(c);
+                    // Color c = new Color(255,0,0);
+                    // p.setColor(c);
                     // END DEBUG
 
                     // println("Intersect " + intersect + 

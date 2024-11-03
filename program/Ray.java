@@ -11,7 +11,7 @@ public class Ray{
     private Vector dir;
     private Vector step_vec;
     private double step = 0.01;
-    private double THRESHOLD = 0.01;
+    private double THRESHOLD = 1;
     private int MAX_ITERATIONS = 100000000;
     private Color c;
     

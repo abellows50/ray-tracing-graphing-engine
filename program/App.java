@@ -3,7 +3,7 @@ import processing.core.PApplet;
 public class App extends PApplet {
 
 	public void settings() {
-		size(2000, 800);
+		size(300, 300);
 	}
 
 	public void setup(){
@@ -44,7 +44,8 @@ public class App extends PApplet {
 
 	public void test(){
 		Scene s = new Scene();
-		s.addLight(new Light(new Vector(0,0,0), new Color(0,255,255),50000000));
+		s.addLight(new Light(new Vector(0,0,0), new Color(0,255,255),1500));
+		s.addLight(new Light(new Vector(60,0,0), new Color(255,0,255),1500));
 		// s.addLight(new Light(new Vector(-5,-5,-5), new Color(255,255,255),50));
 		s.addSurface(new Sphere(100,0,0,140));
 

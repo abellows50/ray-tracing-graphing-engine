@@ -44,11 +44,14 @@ public class App extends PApplet {
 
 	public void test(){
 		Scene s = new Scene();
-		s.addLight(new Light(new Vector(0,-10,-10), new Color(0,255,255),500));
-		s.addSurface(new Sphere(10,3,10,10));
+		s.addLight(new Light(new Vector(0,-10,-10), new Color(0,255,255),2000));
+		// s.addSurface(new Sphere(10,50,10,10));
 		// s.addLight(new Light(new Vector(60,0,0), new Color(255,0,255),1500));
 		// s.addLight(new Light(new Vector(-5,-5,-5), new Color(255,255,255),50));
-		s.addSurface(new Sphere(40,0,0,0));
+		// s.addSurface(new Sphere(40,0,0,0));
+		s.addSurface(new Sphere(40,0,0,100));
+		s.addSurface(new Sphere(40,0,100,0));
+		s.addSurface(new Sphere(40,100,0,0));
 		// s.addSurface(new Sphere(40,0,0,100));
 		// s.addSurface(new Sphere(40,100,0,0));
 		

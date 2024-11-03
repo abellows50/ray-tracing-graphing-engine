@@ -46,10 +46,10 @@ public class Camera extends PApplet{
     }
     
     public void develop(){
-        int c = 0;
+        int cnt = 0;
         for(Pixel[] prow: this.pixels){
-            println("ROW " + c + " of " + this.pixels.length);
-            c++;
+            println("ROW " + cnt + " of " + this.pixels.length);
+            cnt++;
             for (Pixel p: prow){
                 Ray dir = new Ray(this.eye, p.getPoint(), 0);
                 // println(dir);
@@ -57,13 +57,15 @@ public class Camera extends PApplet{
                 if(intersect != null){
                     // SHOULD BE
                     Color c = this.s.get_light_at_point(intersect);
+                    // println(c);
                     // c = c.scale(100000.);
                     p.setColor(c);
+                    
                     // END SHOULD BE
 
                     // DEBUG
-                    Color c = new Color(255,0,0);
-                    p.setColor(c);
+                    // Color c = new Color(255,0,0);
+                    // p.setColor(c);
                     // END DEBUG
 
                     // println("Intersect " + intersect + 

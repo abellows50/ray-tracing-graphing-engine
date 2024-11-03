@@ -3,7 +3,7 @@ import processing.core.PApplet;
 public class App extends PApplet {
 
 	public void settings() {
-		size(500, 500);
+		size(2000, 800);
 	}
 
 	public void setup(){
@@ -44,10 +44,10 @@ public class App extends PApplet {
 
 	public void test(){
 		Scene s = new Scene();
-		s.addLight(new Light(new Vector(5,5,5), new Color(255,255,255),50000000000));
+		s.addLight(new Light(new Vector(5,5,5), new Color(255,255,255),50000000));
 		// s.addLight(new Light(new Vector(-5,-5,-5), new Color(255,255,255),50));
-		// s.addSurface(new Sphere(100,2,2,245));
-		s.addSurface(new Sphere(1000,2,2,2045));
+		s.addSurface(new Sphere(100,2,2,275));
+
 
 		// System.out.println("Sphere is ")
 		// s.addSurface(new Sphere(50,20,2,140));
@@ -57,17 +57,17 @@ public class App extends PApplet {
 		// println("line 37 says: " + r.intersect(s));
 
 		//test for camera
-		Camera c = new Camera(400,400, //width, height
-							  new Vector(0.005,0,0),  //pixel_x_offset
-							  new Vector(0,0.005,0),  //pixel_y_offset
-							  new Vector(0,0,10),  //camera_to_center_pixel
+		Camera c = new Camera(1400,800, //width, height
+							  new Vector(0.05,0,0),  //pixel_x_offset
+							  new Vector(0,0.05,0),  //pixel_y_offset
+							  new Vector(0,0,40),  //camera_to_center_pixel
 							  new Vector(0,0,0),  //eye
 							  s); //scene
 		
+		System.out.println("Developing camera...");
 		c.develop();
-		
+		System.out.println("Rendering Image...");
 		int[][] output = c.render();
-		println(output[0]);
 		this.render_to_image(output);
 		System.out.println("done");
 	}

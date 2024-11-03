@@ -25,7 +25,8 @@ public class Scene{
             }
             if(!intersected){
                 double dist = connecter.mag();
-                c = c.add(l.getColor().scale(1/dist/dist));
+                // System.out.println(l.getColor().scale(l.getIntensity()/dist/dist));
+                c = c.add(l.getColor().scale(l.getIntensity()/dist/dist));
             }
         }
         return c;

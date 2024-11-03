@@ -60,11 +60,29 @@ public class Ray{
         Vector curP = new Vector(this.origen);
         while (true){
             if(c>MAX_ITERATIONS){
-                System.out.println("Max Iterations Exceded...");
+                // System.out.println("Max Iterations Exceded...");
                 return new Bool_Point(false, null);
             }
             double curErr = s.err_from_point(curP);
             if(Math.abs(curErr) < THRESHOLD){
+                System.out.println("Intersected at " + curP);
+                return new Bool_Point(true, curP);
+            }
+            curP = curP.add(this.step_vec);
+            c++;
+        }
+    }
+    public Bool_Point intersectIter(Surface s){
+        int c = 0;
+        Vector curP = new Vector(this.origen);
+        while (true){
+            if(c>MAX_ITERATIONS){
+                // System.out.println("Max Iterations Exceded...");
+                return new Bool_Point(false, null);
+            }
+            double curErr = s.err_from_point(curP);
+            if(Math.abs(curErr) < THRESHOLD){
+                System.out.println("Intersected at " + curP);
                 return new Bool_Point(true, curP);
             }
             curP = curP.add(this.step_vec);

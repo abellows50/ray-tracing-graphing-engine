@@ -13,6 +13,7 @@ public class Color extends PApplet{
         return new Color((this.r + c.getR())%255, 
                          (this.g + c.getG())%255, 
                          (this.b + c.getB())%255);
+        
     }
 
     public Color scale(double s){

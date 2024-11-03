@@ -44,9 +44,9 @@ public class App extends PApplet {
 
 	public void test(){
 		Scene s = new Scene();
-		s.addLight(new Light(new Vector(5,5,5), new Color(255,255,255),50000000));
+		s.addLight(new Light(new Vector(200,200,50), new Color(0,255,255),50000000));
 		// s.addLight(new Light(new Vector(-5,-5,-5), new Color(255,255,255),50));
-		s.addSurface(new Sphere(100,2,2,275));
+		s.addSurface(new Sphere(50,0,0,140));
 
 
 		// System.out.println("Sphere is ")
@@ -57,10 +57,10 @@ public class App extends PApplet {
 		// println("line 37 says: " + r.intersect(s));
 
 		//test for camera
-		Camera c = new Camera(800,800, //width, height
+		Camera c = new Camera(500,500, //width, height
 							  new Vector(0.05,0,0),  //pixel_x_offset
 							  new Vector(0,0.05,0),  //pixel_y_offset
-							  new Vector(0,0,40),  //camera_to_center_pixel
+							  new Vector(0,0,20),  //camera_to_center_pixel
 							  new Vector(0,0,0),  //eye
 							  s); //scene
 		

@@ -48,15 +48,7 @@ public class App extends PApplet {
 		s.addLight(new Light(new Vector(60,0,0), new Color(255,0,255),1500));
 		// s.addLight(new Light(new Vector(-5,-5,-5), new Color(255,255,255),50));
 		s.addSurface(new Sphere(100,0,0,140));
-
-
-		// System.out.println("Sphere is ")
-		// s.addSurface(new Sphere(50,20,2,140));
-		// s.addSurface(new Sphere(1,4,4,40));
-		
-		// Ray r = new Ray(new Vector(0,0,0), new Vector(1,1,1));
-		// println("line 37 says: " + r.intersect(s));
-
+		s.addSurface(new Sphere(100,100,0,140));
 		//test for camera
 		Camera c = new Camera(300,300, //width, height
 							  new Vector(0.05,0,0),  //pixel_x_offset

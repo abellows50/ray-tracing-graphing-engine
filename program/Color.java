@@ -10,9 +10,10 @@ public class Color extends PApplet{
     }
 
     public Color add (Color c){
-        return new Color((this.r + c.getR())%255, 
-                         (this.g + c.getG())%255, 
-                         (this.b + c.getB())%255);
+        // return new Color((this.r + c.getR())%255, 
+        //                  (this.g + c.getG())%255, 
+        //                  (this.b + c.getB())%255);
+        return new Color(this.r + c.getR(), this.g + c.getG(), this.b + c.getB());
         
     }
 

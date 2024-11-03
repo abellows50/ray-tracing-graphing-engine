@@ -50,10 +50,11 @@ public class Camera extends PApplet{
     // develop the camera given the scene
     public void develop(){
         int cnt = 0;
-        for(Pixel[] prow: this.pixels){
-            println("ROW " + cnt + " of " + this.pixels.length);
-            cnt++;
-            for (Pixel p: prow){
+        
+        for(int x=0; x<this.pixels.length; x++){
+            println("ROW " + x + " of " + this.pixels.length);
+            for(int y=0; y<this.pixels[x].length; y++){
+                Pixel p = this.pixels[x][y];
                 Ray dir = new Ray(this.eye, p.getPoint(), 0);
                 // println(dir);
                 
@@ -69,22 +70,48 @@ public class Camera extends PApplet{
                     // println(c);
                     // c = c.scale(100000.);
                     p.setColor(c);
-
-                    // END SHOULD BE
-
-                    // DEBUG
-                    // Color c = new Color(255,0,0);
-                    // p.setColor(c);
-                    // END DEBUG
-
-                    // println("Intersect " + intersect + 
-                            // "//LIGHT: " + p.getColor());
                 }
                 else{
                     p.setColor(new Color(0,0,0));
                 }
             }
         }
+        
+        // for(Pixel[] prow: this.pixels){
+        //     println("ROW " + cnt + " of " + this.pixels.length);
+        //     cnt++;
+        //     for (Pixel p: prow){
+        //         Ray dir = new Ray(this.eye, p.getPoint(), 0);
+        //         // println(dir);
+                
+        //         //SHOULD BE: Vector intersect = dir.intersect(this.s);
+        //         Bool_Point bp = dir.intersect(this.s.getSurfaces().get(0));
+        //         Vector intersect = null;
+        //         if(bp.intersected()){
+        //             intersect = bp.getP();
+        //         }
+        //         if(intersect != null){
+        //             // SHOULD BE
+        //             Color c = this.s.get_light_at_point(intersect);
+        //             // println(c);
+        //             // c = c.scale(100000.);
+        //             p.setColor(c);
+
+        //             // END SHOULD BE
+
+        //             // DEBUG
+        //             // Color c = new Color(255,0,0);
+        //             // p.setColor(c);
+        //             // END DEBUG
+
+        //             // println("Intersect " + intersect + 
+        //                     // "//LIGHT: " + p.getColor());
+        //         }
+        //         else{
+        //             p.setColor(new Color(0,0,0));
+        //         }
+        //     }
+        // }
     }
 
 

@@ -14,7 +14,8 @@ public class Pixel{
     }
 
     
-    public Pixel(int x, int y, int width, int height,
+    public Pixel(int x, int y, 
+                int width, int height,
                 Vector pixel_x_offset, 
                 Vector pixel_y_offset, 
                 Vector eye,

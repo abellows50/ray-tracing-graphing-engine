@@ -23,12 +23,14 @@ public class Camera extends PApplet{
 
         for(int x = 0; x<pixels.length; x++){
             for(int y = 0; y<pixels[x].length; y++){
-                pixels[x][y] = new Pixel(x, y, width, height, 
+                pixels[x][y] = new Pixel(x, y, 
+                                        width, height, 
                                         pixel_x_offset, 
                                         pixel_y_offset, 
                                         eye,
                                         camera_to_center_pixel);
-                //System.out.println(pixels[x][y]);
+                            
+                // System.out.println(pixels[x][y]);
             }
         }
     }
@@ -54,19 +56,25 @@ public class Camera extends PApplet{
             for (Pixel p: prow){
                 Ray dir = new Ray(this.eye, p.getPoint(), 0);
                 // println(dir);
-                Vector intersect = dir.intersect(this.s);
+                
+                //SHOULD BE: Vector intersect = dir.intersect(this.s);
+                Bool_Point bp = dir.intersect(this.s.getSurfaces().get(0));
+                Vector intersect = null;
+                if(bp.intersected()){
+                    intersect = bp.getP();
+                }
                 if(intersect != null){
                     // SHOULD BE
-                    Color c = this.s.get_light_at_point(intersect);
-                    // println(c);
-                    // c = c.scale(100000.);
-                    p.setColor(c);
+                    // Color c = this.s.get_light_at_point(intersect);
+                    // // println(c);
+                    // // c = c.scale(100000.);
+                    // p.setColor(c);
 
                     // END SHOULD BE
 
                     // DEBUG
-                    // Color c = new Color(255,0,0);
-                    // p.setColor(c);
+                    Color c = new Color(255,0,0);
+                    p.setColor(c);
                     // END DEBUG
 
                     // println("Intersect " + intersect + 

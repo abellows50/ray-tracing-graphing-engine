@@ -12,7 +12,8 @@ public class Camera extends PApplet{
                     Vector pixel_x_offset,
                     Vector pixel_y_offset,
                     Vector camera_to_center_pixel,
-                    Vector eye, Scene s){
+                    Vector eye, 
+                    Scene s){
         this.pixels = new Pixel[width][height];
         this.pixel_x_offset = pixel_x_offset;
         this.pixel_y_offset = pixel_y_offset;
@@ -27,7 +28,7 @@ public class Camera extends PApplet{
                                         pixel_y_offset, 
                                         eye,
                                         camera_to_center_pixel);
-                System.out.println(pixels[x][y]);
+                //System.out.println(pixels[x][y]);
             }
         }
     }
@@ -45,12 +46,28 @@ public class Camera extends PApplet{
     }
     
     public void develop(){
+        int c = 0;
         for(Pixel[] prow: this.pixels){
+            println("ROW " + c + " of " + this.pixels.length);
+            c++;
             for (Pixel p: prow){
                 Ray dir = new Ray(this.eye, p.getPoint(), 0);
+                // println(dir);
                 Vector intersect = dir.intersect(this.s);
                 if(intersect != null){
-                    p.setColor(s.get_light_at_point(intersect));
+                    // SHOULD BE
+                    Color c = this.s.get_light_at_point(intersect);
+                    // c = c.scale(100000.);
+                    p.setColor(c);
+                    // END SHOULD BE
+
+                    // DEBUG
+                    Color c = new Color(255,0,0);
+                    p.setColor(c);
+                    // END DEBUG
+
+                    // println("Intersect " + intersect + 
+                            // "//LIGHT: " + p.getColor());
                 }
                 else{
                     p.setColor(new Color(0,0,0));
@@ -65,6 +82,7 @@ public class Camera extends PApplet{
         int[][] output = new int[this.pixels.length][this.pixels[0].length];
         for(int x = 0; x<this.pixels.length; x++){
             for (int y = 0; y<this.pixels[0].length; y++){
+                // println(this.pixels[x][y].getColor());
                 output[x][y] = this.pixels[x][y].getColor().getColor();
             }
         }

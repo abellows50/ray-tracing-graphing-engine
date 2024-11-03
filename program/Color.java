@@ -29,5 +29,5 @@ public class Color extends PApplet{
     public double getR(){return this.r;}
     public double getG(){return this.g;}
     public double getB(){return this.b;}
-    public int getColor(){return color((float)this.r,(float)this.g,(float)this.b);}
+    public int getColor(){return color((int)this.r,(int)this.g,(int)this.b);}
 }

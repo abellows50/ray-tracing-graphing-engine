@@ -15,7 +15,9 @@ public class Scene{
             Ray connecter = new Ray(p,l.getPosition(),0);
             boolean intersected = false;
             for(Surface s: this.surfaces){
-                if(connecter.intersect(s).intersected()){ //if the light intersected
+                Bool_Point bp = connecter.intersect(s);
+                if(bp.intersected() && Vector.dist(bp.getP(),p) > 2){ //if the light intersected and is not at the orriginel point!
+
                     intersected = true;
                     System.out.println("intersected");
                     break;

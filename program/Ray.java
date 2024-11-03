@@ -68,4 +68,8 @@ public class Ray{
         return new Bool_Point(-THRESHOLD < lastErr && lastErr < THRESHOLD,
                                 curP.add(step_vec.scale(-1)));
     }
+
+    public String toString(){
+        return "{RAY: <<" + this.origen + ", " + this.dir + ">>}";
+    }
 }

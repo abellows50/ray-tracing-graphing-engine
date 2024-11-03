@@ -12,7 +12,7 @@ public class Ray{
     private Vector step_vec;
     private double step = 0.01;
     private double THRESHOLD = 1;
-    private int MAX_ITERATIONS = 1000000;
+    private int MAX_ITERATIONS = 100000;
     private Color c;
     
     public Ray(Vector o, Vector d){
@@ -56,23 +56,20 @@ public class Ray{
     }
 
     public Bool_Point intersect(Surface s){
-        double lastErr = 1/0.;
-        Vector curP = new Vector(this.origen);
-        double curErr = s.err_from_point(curP);
         int c = 0;
-        while (Math.abs(lastErr)>Math.abs(curErr)){
+        Vector curP = new Vector(this.origen);
+        while (true){
             if(c>MAX_ITERATIONS){
                 System.out.println("Max Iterations Exceded...");
-                break;
+                return new Bool_Point(false, null);
             }
-            lastErr = curErr;
-            curP = curP.add(step_vec);
-            curErr = s.err_from_point(curP);
-            // System.out.println("curErr: " + curErr + " pnt: " + curP);
+            double curErr = s.err_from_point(curP);
+            if(Math.abs(curErr) < THRESHOLD){
+                return new Bool_Point(true, curP);
+            }
+            curP = curP.add(this.step_vec);
             c++;
         }
-        return new Bool_Point(-THRESHOLD < lastErr && lastErr < THRESHOLD,
-                                curP.add(step_vec.scale(-1)));
     }
 
     public String toString(){

@@ -58,12 +58,12 @@ public class Camera extends PApplet{
                 Ray dir = new Ray(this.eye, p.getPoint(), 0);
                 // println(dir);
                 
-                //SHOULD BE: Vector intersect = dir.intersect(this.s);
-                Bool_Point bp = dir.intersect(this.s.getSurfaces().get(0));
-                Vector intersect = null;
-                if(bp.intersected()){
-                    intersect = bp.getP();
-                }
+               Vector intersect = dir.intersect(this.s);
+                // Bool_Point bp = dir.intersect(this.s.getSurfaces());
+                // Vector intersect = null;
+                // if(bp.intersected()){
+                //     intersect = bp.getP();
+                // }
                 if(intersect != null){
                     // SHOULD BE
                     Color c = this.s.get_light_at_point(intersect);

@@ -20,10 +20,12 @@ public class Pixel{
                 Vector pixel_y_offset, 
                 Vector eye,
                 Vector camera_to_center_pixel){
+
         Vector center = eye.add(camera_to_center_pixel);
+        // Vector x_offset = pixel_x_offset.scale(x-width/2);
+        // Vector y_offset = pixel_y_offset.scale(y-height/2);
         Vector x_offset = pixel_x_offset.scale(x-width/2);
         Vector y_offset = pixel_y_offset.scale(y-height/2);
-
         Vector pos = center.add(x_offset).add(y_offset);
 
         this.p = pos;

@@ -1,2 +1,3 @@
-javac -d . *.java
-java App
+if ( javac -d . *.java ); then
+    java App
+fi

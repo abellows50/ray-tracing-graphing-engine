@@ -49,13 +49,14 @@ public class App extends PApplet {
 		//simple scene
 		// s.addSurface(new Sphere(90,0,0,100));
 		s.addSurface(new Plane(new Vector(0,0,200), -1, -0.5));
+		s.addSurface(new Plane(new Vector(0,0,200), 1, 2));
 		s.addSurface(new Sphere(30,0,0,100));
 		s.addLight(new Light(new Vector(0,0,0), new Color(0,255,255), 5000));
 		//test for camera
 		Camera c = new Camera(200,200, //width, height
 							  new Vector(0.05,0,0),  //pixel_x_offset
 							  new Vector(0,0.05,0),  //pixel_y_offset
-							  new Vector(0,0,10),  //camera_to_center_pixel
+							  new Vector(0,0,20),  //camera_to_center_pixel
 							  new Vector(0,0,-400),  //eye
 							  s); //scene
 		

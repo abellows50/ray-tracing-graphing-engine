@@ -65,7 +65,7 @@ public class Ray{
             }
             double curErr = s.err_from_point(curP);
             if(Math.abs(curErr) < THRESHOLD){
-                System.out.println("Intersected at " + curP);
+                // System.out.println("Intersected at " + curP);
                 return new Bool_Point(true, curP);
             }
             curP = curP.add(this.step_vec);
@@ -82,7 +82,7 @@ public class Ray{
             }
             double curErr = s.err_from_point(curP);
             if(Math.abs(curErr) < THRESHOLD){
-                System.out.println("Intersected at " + curP);
+                // System.out.println("Intersected at " + curP);
                 return new Bool_Point(true, curP);
             }
             curP = curP.add(this.step_vec);

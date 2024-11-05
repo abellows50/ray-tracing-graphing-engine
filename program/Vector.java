@@ -65,6 +65,13 @@ public class Vector{
         );
     }
 
+    public Vector pos(){
+        return new Vector(
+            Math.abs(this.x),
+            Math.abs(this.y),
+            Math.abs(this.z)
+        );
+    }
     public Vector norm(){
         return scale(1/this.mag());
     }

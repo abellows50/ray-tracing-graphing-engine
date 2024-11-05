@@ -53,18 +53,21 @@ public class App extends PApplet {
 		s.addSurface(new Sphere(30,0,0,100));
 
 		// s.addSurface(new ParabaloidYZ(new Vector(-20,0,-300), 20, 1));
-		s.addLight(new Light(new Vector(0,0,-400), new Color(0,255,255), 5000));
+		s.addLight(new Light(new Vector(0,0,0), new Color(0,255,255), 5000));
+		s.addLight(new Light(new Vector(0,0,-200), new Color(255,0,255), 500000));
 		//test for camera
 
-		Vector i = new Vector(0.05,0,0);
-		Vector j = new Vector(0,0.05,0);
-		Vector k = i.cross(j).norm().scale(20);
+		Vector i = new Vector(0.05,0.0,0);
+		Vector j = new Vector(0.0,0.05,0);
+		Vector k = i.cross(j).norm().pos().scale(20);
+		println(k);
+		Vector origen = new Vector(0,0,-400);
 
 		Camera c = new Camera(200,200, //width, height
 							  i,  //pixel_x_offset
 							  j,  //pixel_y_offset
 							  k,  //camera_to_center_pixel
-							  new Vector(0,0,-400),  //eye
+							  k.scale(-20),  //eye
 							  s); //scene
 		
 		System.out.println("Developing camera...");

@@ -19,7 +19,7 @@ public class Scene{
                 if(bp.intersected() && Vector.dist(bp.getP(),p) > 2){ //if the light intersected and is not at the orriginel point!
                 //this is a shaddow
                     intersected = true;
-                    System.out.println("intersected");
+                    // System.out.println("intersected");
                     break;
                 }
             }

@@ -1,7 +1,8 @@
 import processing.core.PApplet;
-
+import processing.core.PGraphics;
 public class App extends PApplet {
-
+	PGraphics graphics;
+	
 	public void settings() {
 		size(500, 500);
 	}
@@ -37,29 +38,25 @@ public class App extends PApplet {
 		for(int x = 0; x < render.length; x++){
 			for(int y = 0; y < render[0].length; y++){
 				int c = render[x][y];
-				set(x, y, c);
+				set(x+100, y+100, c);
 			}
 		}
 	}
 
 	public void test(){
+		// background(0);
 		Scene s = new Scene();
-		s.addLight(new Light(new Vector(0,0,0), new Color(0,255,255),2000));
-		// s.addSurface(new Sphere(10,50,10,10));
-		// s.addLight(new Light(new Vector(60,0,0), new Color(255,0,255),1500));
-		// s.addLight(new Light(new Vector(-5,-5,-5), new Color(255,255,255),50));
-		// s.addSurface(new Sphere(40,0,0,0));
-		s.addSurface(new Sphere(40,0,0,100));
-		s.addSurface(new Sphere(30,0,0,30));
-		// s.addSurface(new Sphere(40,100,0,0));
-		// s.addSurface(new Sphere(40,0,0,100));
-		// s.addSurface(new Sphere(40,100,0,0));
-		
+		//simple scene
+		// s.addSurface(new Sphere(90,0,0,100));
+		s.addSurface(new Plane(new Vector(0,0,200), -1, -0.5));
+		s.addSurface(new Plane(new Vector(0,0,200), 1, 2));
+		s.addSurface(new Sphere(30,0,0,100));
+		s.addLight(new Light(new Vector(0,0,0), new Color(0,255,255), 5000));
 		//test for camera
-		Camera c = new Camera(300,300, //width, height
+		Camera c = new Camera(200,200, //width, height
 							  new Vector(0.05,0,0),  //pixel_x_offset
 							  new Vector(0,0.05,0),  //pixel_y_offset
-							  new Vector(0,0,10),  //camera_to_center_pixel
+							  new Vector(0,0,20),  //camera_to_center_pixel
 							  new Vector(0,0,-400),  //eye
 							  s); //scene
 		

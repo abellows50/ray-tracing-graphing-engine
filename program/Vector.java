@@ -56,6 +56,15 @@ public class Vector{
                this.z * v.z;
     }
 
+    public Vector cross(Vector v){
+        //cross product
+        return new Vector(
+            this.y*v.z - this.z*v.y,
+            this.z*v.x - this.x*v.z,
+            this.x*v.y - this.y*v.x
+        );
+    }
+
     public Vector norm(){
         return scale(1/this.mag());
     }

@@ -51,10 +51,11 @@ public class App extends PApplet {
 		// s.addSurface(new Plane(new Vector(0,0,200), -1, -0.5));
 		s.addSurface(new Plane(new Vector(0,0,200), 1, 2));
 		s.addSurface(new Sphere(30,0,0,100));
+		s.addSurface(new ParabaloidXY(new Vector(0,0,-300), 20, 1));
 
 		// s.addSurface(new ParabaloidYZ(new Vector(-20,0,-300), 20, 1));
 		s.addLight(new Light(new Vector(0,0,0), new Color(0,255,255), 5000));
-		s.addLight(new Light(new Vector(0,0,-200), new Color(255,0,255), 500000));
+		// s.addLight(new Light(new Vector(0,0,-200), new Color(255,0,255), 500000));
 		//test for camera
 
 		Vector i = new Vector(0.05,0.0,0);

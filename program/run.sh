@@ -1,4 +1,4 @@
 export CLASSPATH=$CLASSPATH:./core.jar
-if ( javac -d . *.java ); then
+if ( javac *.java ); then
     java App
 fi
